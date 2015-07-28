@@ -1,2 +1,2 @@
 # ticket-resale
-Will Update Soon!!
+Ugly code here. Need help in organising it.

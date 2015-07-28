@@ -26,6 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # multiple-provider authentication
 gem 'omniauth', '~> 1.2.2'
 
+#mysql gem for mysqlLib
+gem 'mysql2', '~> 0.3.18'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
