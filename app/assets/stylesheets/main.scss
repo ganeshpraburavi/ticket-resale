@@ -44,7 +44,7 @@ q:before, q:after {
 	content: none;
 }
 table {
-	border-collapse: collapse;
+//	border-collapse: collapse;
 	border-spacing: 0;
 }
 
@@ -58,6 +58,12 @@ header
 {
   height: 250px;
   background-color: #27ae60;
+}
+
+#logo{
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
 }
 
 #content
@@ -90,4 +96,126 @@ button:hover
   background-color: #27be60;
   border:1px solid #27e360;
   color: white;
+}
+
+table {
+		top:6px;
+    border-collapse:separate;
+    border:solid #27c160 1px;
+    border-radius:6px;
+    -moz-border-radius:6px;
+		font-weight: 200;
+}
+
+td, th {
+    border-left:solid #27c160 1px;
+    border-top:solid #27c160 1px;
+		padding: 8px;
+}
+
+th {
+    background-color: #27ae60;
+    border-top: none;
+		padding: 8px;
+}
+
+td:first-child {
+     border-left: none;
+}
+
+tr:hover{
+		background-color: #27be60;
+		border:1px solid #27e360;
+		cursor: pointer;
+		color:white;
+}
+
+/*
+table
+{
+  font-family:  Source Sans Pro;
+	border-spacing: 0;
+	border-radius:6px;
+	-moz-border-radius:6px;
+}
+
+th
+{
+  background-color: #27bb60;
+  border:1px solid #27be60;
+  padding:8px;
+}
+tr
+{
+  background-color: #27af71;
+	border-radius: 10px;
+}
+td
+{
+  padding: 8px;
+	border:1px solid #27be60;
+}
+
+th:first-child
+{
+	border-top-left-radius: 5px;
+}
+th:last-child
+{
+	border-top-right-radius: 5px;
+}
+table tr:last-child td:first-child
+{
+	border:1px solid #27be60;
+	border-bottom-left-radius: 5px;
+}
+table tr:last-child td:last-child
+{
+	border:1px solid #27be60;
+	border-bottom-right-radius: 5px;
+}
+*/
+// Login Page
+.txtBox{
+  outline: none;
+  height: 20px;
+  width: 250px;
+  border:1px solid black;
+  color: white;
+  font-size: 14px;
+  font-weight: 100;
+  padding: 10px;
+  background-color: #27af71;
+  border-radius: 15px;
+  letter-spacing: 2px;
+}
+
+.txtBox:focus{
+  border:1px solid white;
+  transition: 0.15s;
+}
+
+
+#leftSplit{
+  display: inline-block;
+  border-right:1px solid white;
+  box-sizing: border-box;
+  width: 49%;
+}
+
+#rightSplit
+{
+  box-sizing: border-box;
+  display: inline-block;
+  width: 50%;
+}
+
+#rightSplit > *
+{
+  margin: 5px;
+}
+
+.sgnbtn
+{
+  width: 200px;
 }
