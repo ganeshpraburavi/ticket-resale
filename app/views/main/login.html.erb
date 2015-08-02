@@ -4,19 +4,55 @@
 <meta name="description" content="Ticket Resale : Sell Movie and Bus Tickets">
 <meta name="description" content="Tickets, Bus Tickets, Movie Tickets, Resale">
 <title>Ticket Resale</title>
+<script>
+$(function(){
+  $('#logo').click(function(){$(this).addClass("logoScrolled")});
+  return $.ajax({
+      url: 'https://apis.google.com/js/client:plus.js?onload=gpAsyncInit',
+      dataType: 'script',
+      cache: true
+    });
+});
+
+window.gpAsyncInit = function() {
+  $('.googleplus-login').click(function(e) {
+    e.preventDefault();
+    gapi.auth.authorize({
+      immediate: false,
+      response_type: 'code',
+      //cookie_policy: 'single_host_origin',
+      client_id: '355631191755-9h9ml3tthv82ukar0qbml1qnoa4881s3.apps.googleusercontent.com',
+      scope: 'email profile',
+    }, function(response) {
+      if (response && !response.error) {
+        // google authentication succeed, now post data to server and handle data securely
+        jQuery.ajax({type: 'GET', url: "/main/login", dataType: 'json', data: response,
+          success: function(json) {
+            location.reload();
+          }
+        });
+      } else {
+        console.log(response)
+        // google authentication failed
+      }
+    });
+  });
+};
+</script>
+
 </head>
 <body>
 <header>
-<img src="/assets/logo.png" alt="Ticket Resale" id="logo"/>
+<img id="logoNormal" src="/assets/logo.png" />
 </header>
 <div id="content">
 <div id="leftSplit">
-<div><button class="btn sgnbtn">Sign Up Using FB</button></div>
-<div><button class="btn sgnbtn">Sign Up Using Google</button></div>
+<div><button class="btn sgnbtn">Sign Up Using <img style="padding-left:10px;vertical-align:middle;border-left:1px solid;" width=25 src="/assets/fb-logo.png" /> </button></div>
+<div><button class="btn sgnbtn googleplus-login">Sign Up Using <img style="padding-left:10px;vertical-align:middle;border-left:1px solid;" width=15 src="/assets/google-plus-logo.png" /></button></div>
 <button class="sgnbtn btn">Register</button>
 </div>
 <div id="rightSplit">
-<div><input type="text" placeholder="Email Address/Login Name" id="email" class="txtBox"/></div>
+<div><input type="text" spellcheck="false"  placeholder="Email Address/Login Name" id="email" class="txtBox"/></div>
 <div><input type="password" placeholder="Password" id="pass" class="txtBox"/></div>
 <button class="btn">Login</button>
 </div>

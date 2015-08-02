@@ -50,20 +50,32 @@ table {
 
 body
 {
-  background-color: #27af71;
+  background-color: white;
   font-family: Source Sans Pro;
 }
 
 header
 {
-  height: 250px;
+  height: 200px;
   background-color: #27ae60;
 }
 
-#logo{
+.logoAnimation{
+
+}
+
+#logoNormal{
 		display: block;
 		margin-left: auto;
 		margin-right: auto;
+		-webkit-transition-property: all;
+		-webkit-transition-duration: 1s;
+}
+
+#logoNormal:target{
+		width:200px;
+		margin-left: 0;
+		margin-right: 0;
 }
 
 #content
@@ -71,6 +83,8 @@ header
   text-align: center;
   width:1000px;
   margin:0px auto;
+	top:50px;
+	position: relative;
 }
 
 .btn{
@@ -85,7 +99,6 @@ button
   background-color: #27af60;
   padding:10px;
   cursor: pointer;
-  border-radius: 20px;
   transition-duration: 0.35s;
   outline: none;
   width: 150px;
@@ -128,6 +141,24 @@ tr:hover{
 		border:1px solid #27e360;
 		cursor: pointer;
 		color:white;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #27c160;
+		font-weight: 100;
+		opacity: 1;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    white;
+		font-weight: 100;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    white;
+		font-weight: 100;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    white;
+		font-weight: 100;
 }
 
 /*
@@ -178,16 +209,16 @@ table tr:last-child td:last-child
 // Login Page
 .txtBox{
   outline: none;
-  height: 20px;
-  width: 250px;
-  border:1px solid black;
+  height: 15px;
+  width: 230px;
+  border:1px solid #27c160;
   color: white;
-  font-size: 14px;
-  font-weight: 100;
+	font-size: 12px;
+  font-weight: 400;
   padding: 10px;
   background-color: #27af71;
-  border-radius: 15px;
   letter-spacing: 2px;
+
 }
 
 .txtBox:focus{
@@ -198,7 +229,7 @@ table tr:last-child td:last-child
 
 #leftSplit{
   display: inline-block;
-  border-right:1px solid white;
+  border-right:1px solid #27c160;
   box-sizing: border-box;
   width: 49%;
 }
